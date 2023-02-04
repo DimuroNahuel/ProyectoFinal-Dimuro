@@ -71,16 +71,16 @@ if(actualizaSaldo){actualizaSaldo.addEventListener("click",funActSaldo);
 }
 
 let btnComprar = document.getElementById("btnComprar");
-if (btnComprar){btnComprar.addEventListener("click",comprarDolar);}
-
+if (btnComprar){btnComprar.addEventListener("click",comprarDolar);
+}
 let btnVender = document.getElementById("btnVender");
-if (btnVender){btnVender.addEventListener("click",venderDolar);}
+if (btnVender)btnVender.addEventListener("click",venderDolar);
 
 let btnSALIR = document.getElementById ("btnSALIR");
-if(btnSALIR){btnSALIR.addEventListener("click",()=>{
+if(btnSALIR)btnSALIR.addEventListener("click",()=>{
     document.getElementById("title").textContent = "Bienvenido ";
     let listaAux =[];
-    listaAux=listaAux.concat("listaOcultar","menuLogeado","ventaDolar","compraDolar")
+    listaAux=listaAux.concat(listaOcultar,menuLogeado,ventaDolar,compraDolar)
     cambioDisplay(listaAux,dispNone); // agrupo varias listas en una temporal para el cambio de display y asi achicar lineas de codigo
     cambioDisplay(listaMostrar,dispBlock);
     cambioDisplay(menuDesplegable,dispFlex); 
@@ -94,19 +94,18 @@ if(btnSALIR){btnSALIR.addEventListener("click",()=>{
         'success')
 
 });
-}
+
 // texto dinamico, al momento de seleccionar la cantidad de dolares a comprar/vender, este texto se actualiza haciendo el calculo del costo real en pesos.
 let inputComprar = document.getElementById("montoComprar");
 let textoComprar = document.getElementById("textCompraDolar");
 inputComprar.addEventListener("keyup",()=>{
     textoComprar.innerHTML = "COSTO EN AR$ : "+precioDolar*inputComprar.value;
-})
+});
 let inputVender = document.getElementById("montoVender");
 let textoVender = document.getElementById("textVenderDolar");
 inputVender.addEventListener("keyup",()=>{
     textoVender.innerHTML = "OBTENDRAS EN AR$: "+precioDolar*inputVender.value;     
-    
-})
+});
 
 
 //BOTONES PARA EL MENU LUEGO DEL LOGEO, CON EL MENU DESPLEGADO.
@@ -116,43 +115,44 @@ inputVender.addEventListener("keyup",()=>{
 
 //SWITCH PARA MENUS DENTRO DEL LOGEO
 let btn_funSaldo = document.getElementById ("idVerSaldo");
-if(btn_funSaldo)btn_funSaldo.addEventListener("click",()=>{
+if(btn_funSaldo){btn_funSaldo.addEventListener("click",()=>{
     switchOcutar(saldoMostrar);
 });//llamo a funcion con parametros que realiza el cambio de clases, en ella se llama el array que cambiará su clase segun se presione su respectivo boton.
-
+}
 let btn_funDeposito = document.getElementById ("idDeposito");
-if(btn_funDeposito)btn_funDeposito.addEventListener("click",()=>{
+if(btn_funDeposito){btn_funDeposito.addEventListener("click",()=>{
     switchOcutar(depositoMostrar);
 });   
-
+}
 let btn_funTransferir = document.getElementById ("idTransferir");
-if(btn_funTransferir)btn_funTransferir.addEventListener("click",()=>{
+if(btn_funTransferir){btn_funTransferir.addEventListener("click",()=>{
     switchOcutar(transferirMostrar);
 });
-
+}
 let btn_funExtraccion = document.getElementById ("idExtraccion");
-if(btn_funExtraccion)btn_funExtraccion.addEventListener("click",()=>{
+if(btn_funExtraccion){btn_funExtraccion.addEventListener("click",()=>{
     switchOcutar(extraerMostrar);
 });
-
+}
 let btn_funDolar = document.getElementById ("dolares");
-if(btn_funDolar)btn_funDolar.addEventListener("click",()=>{
+if(btn_funDolar){btn_funDolar.addEventListener("click",()=>{
     switchOcutar(dolarMostrar);
     if (document.getElementById("comprarDolar").style.display=='none'){
         cambioDisplay(compraDolar,dispNone); // al tener varios botones anidados, debo realizar una comprobacion extra para que se cambien los displays al mismo tiempo.
         cambioDisplay(ventaDolar,dispNone);
     }
 });
-
+}
 let btn_funComprar = document.getElementById ("comprarDolar");
-if(btn_funComprar)btn_funComprar.addEventListener("click",()=>{
+if(btn_funComprar){btn_funComprar.addEventListener("click",()=>{
     switchOcutar(compraDolar);
 });
-
+}
 let btn_funVender = document.getElementById ("venderDolar");
-if(btn_funVender)btn_funVender.addEventListener("click",()=>{
+if(btn_funVender){btn_funVender.addEventListener("click",()=>{
     switchOcutar(ventaDolar);
 });
+}
 //SWITCH PARA MENUS DENTRO DEL LOGEO
 
 
@@ -177,10 +177,11 @@ function inicio (){
     );//funcionamiento de boton "registro"
 
     let btnSubmit = document.getElementById("btnSubmit");
-    if(btnSubmit)btnSubmit.addEventListener("click",()=>{
+    if(btnSubmit){btnSubmit.addEventListener("click",()=>{
         let reinicioInput=["crearUser","crearPass","repitePass"]
         reiniciandoInput(reinicioInput);
     });////funcionamiento de boton "sumbit"
+    }
 }
 
 function ingresoForm(){
@@ -429,7 +430,9 @@ function funActSaldo(){//funcion para actualizar los saldos mostrados en pantall
     }
     document.getElementById("textCompraDolar").textContent = "COSTO EN AR$ : ";
     document.getElementById("textVenderDolar").textContent = "OBTENDRAS EN AR$: ";
-}//funcion que se utiliza para actualizar el saldo mostrado en pantalla luego de una operacion o al presionar los botones "actualizar saldo"
+}
+
+//funcion que se utiliza para actualizar el saldo mostrado en pantalla luego de una operacion o al presionar los botones "actualizar saldo"
 function cambioDisplay(lista,display){
     for (let x=0; x<lista.length;x++ ){
         document.getElementById(lista[x]).style.display = display;

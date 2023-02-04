@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body id="idBody" class="body">
+    <div class="TODO">
+        <div action="nav" id="barraNav" class="caja">
+            <div id="dolar"></div>
+            <h1 id="title">Menu de ingreso</h1>
+            <input type='submit' value='SALIR' id='btnSALIR' class='btnSALIR'>
+
+            
+            <a id="idLogear" class="claseIngreso">Ingresar</a>
+            <ul class="menuDesplegable" id="menuDesplegable0">
+                <li> <input type='text' name='usuario' id='ingreseUsuario' placeholder='Ingrese nombre de usuario' class='ingreseUsuario formLogin' ></li>
+                <li><input type='text' name='contraseña' id='ingresePass' placeholder='Ingrese contraseña' class='ingresePass formLogin' ></li>
+                <li><input type='submit' value='INGRESAR' id='btnIngreso' class='btnIngreso formLogin'></li>
+
+            </ul>
+            <a id="idRegistrar" class="claseRegistro">Registrarse</a>
+            <ul class="menuDesplegable" id="menuDesplegable1">
+                <li><input type='text' name='crearUser' id='crearUser' placeholder='Ingrese nombre de usuario' class='crearUser formReg' ></li>
+                <li><input type='text' name='crearPass' id='crearPass' placeholder='Ingrese su nueva contraseña' class='crearPass formReg' ></li>
+                <li><input type='text' name='repitePass' id='repitePass' placeholder='Repita su contraseña' class='repitePass formReg' ></li>
+                <li><input type='submit' value='REGISTRARSE' id='btnRegistrar' class='btnRegistrar formReg'></li>
+                <li><input type='submit' value='SUBMIT' id='btnSubmit' class='btnSubmit formReg'></li>
+            </ul>
+
+            <ul id="menuLogeado" class="menuLogeado">
+                <li>
+                    <input type='submit' value='VER SALDO' id='idVerSaldo' class='claseVerSaldo menuDesp'>
+                    <P id="mostrarSaldo" class="muestraSaldo"> " " </P>
+                    <input type='submit' value='Actualizar' id='actualizaSaldo' class='actualizarSaldo'>
+                </li>
+                <li>
+                    <input type='submit' value='DEPOSITO' id='idDeposito' class='claseDeposito menuDesp'>
+                    <P id="saldoDeposito" class="classSaldoDeposito"> " " </P>
+                    <input type='text' name='deposito' id='inputDeposito' placeholder='Ingrese dinero' class='inputDeposito' >
+                    <input type='submit' value='Depositar' id='btnDeposito' class='btnDeposito'>
+                </li>
+                <li>
+                    <P id="saldoTransferir" class="saldoTransferir"> " " </P>
+                    <input type='submit' value='TRANSFERIR' id='idTransferir' class='claseTransferencia menuDesp'>
+                    <input type='text' name='cbu' id='cbuTransferencia' placeholder='nombre de usuario receptor (debe estar registrado)' class='cbuTransferencia' >
+                    <input type='number' name='monto' id='montoTransferencia' placeholder='Ingrese dinero a transferir' class='montoTransferencia'>
+                    <input type='text' name='motivo' id='motivoTransferencia' placeholder='motivo de la transferencia?' class='motivoTransferencia'>
+                    <input type='submit' value='Transferir' id='btnTransferir' class='btnTransferir'>
+                </li>
+                <li>
+                    <P id="saldoExtraccion" class="saldoExtraccion"> " " </P>
+                    <input type='submit' value='EXTRACCION' id='idExtraccion' class='claseExtraccion menuDesp'>
+                    <input type='number' name='extraer' id='extraerDinero' placeholder='Ingrese monto para extraccion' class='ExtraerDinero' >
+                    <input type='text' name='confirmacionNecesaria' id='confirmaPass' placeholder='INGRESE CONTRASEÑA PARA CONFIRMAR' class='confirmaPass'>
+                    <input type='submit' value='Extraer' id='btnExtraer'class='btnExtraer'>
+                </li>
+                <li>
+                    <input type='submit' value='DOLARES' id='dolares' class='claseVerDolar menuDesp'>
+                    <P id="mostrarSaldoDolar" class="muestraSaldoDolar"> " " </P>
+
+                    <input type='submit' value='COMPRAR' id='comprarDolar' class='comprarDolar'>
+                    <P id="textCompraDolar" class="textCompraDolar"> " " </P>
+                    <input type='number' name='montoComprar' id='montoComprar' placeholder='Ingrese cantidad a comprar' class='montoComprar' >
+                    <input type='submit' value='Comprar' id='btnComprar' class='btnComprar'>
+
+
+                    <input type='submit' value='VENDER' id='venderDolar' class='venderDolar'>
+                    <P id="textVenderDolar" class="textVenderDolar"> " " </P>
+                    <input type='number' name='montoVender' id='montoVender' placeholder='Ingrese cantidad a vender' class='montoVender' >
+                    <input type='submit' value='Vender' id='btnVender' class='btnVender'>
+                </li>
+
+            </ul>
+        </div>
+        <div id="htmlIdMenu" class="claseCajero">
+        </div>
+    </div>
+    
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js
+    "></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

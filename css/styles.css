@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.body{
+    min-height: 100vh;
+    flex-wrap: nowrap;
+    background: rgb(250, 192, 192);
+    box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
+    color: #fff;
+    padding: 1% 15%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.caja{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 1% 22%;
+    border: 1px solid #092327;
+    border-radius: .5rem;
+}
+
+.menuDesp{
+    border-radius: .5rem;  
+}
+
+#volver, ul{
+    text-decoration:none;
+    list-style-type: none;
+}
+
+#htmlIdMenu, ul{
+    box-shadow: none;
+    border: none;
+    background: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+li {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2%;
+}
+input{
+    text-align: center;
+    padding: 2%;
+    margin: 2%;
+
+}
+
+ .formReg, .formLogin{
+    text-align: center;
+    padding: 1% 10%;
+ }
+
+ .cajaLoged{
+    display: flex;
+    flex-direction: column;
+    padding: 1% 10%;
+    text-align: center;
+    
+ }
+
+ .menuLogeado{
+    padding: 10% 20%;
+ }
+
+ #idVerSaldo, #idDeposito, #idTransferir, #idExtraccion, #btnSALIR, #idLogear, #idRegistrar, #dolares, #comprarDolar, #venderDolar
+  {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    background: #495057;
+  }
+  #comprarDolar, #venderDolar{
+    width: 30%;
+    min-width: 10px;
+  }
+
+
+  #actualizaSaldo, #btnDeposito, #btnTransferir, #btnExtraer, #btnSubmit, #btnRegistrar, #btnIngreso, #btnComprar, #btnVender{
+    min-width: 130px;
+    height: 40px;
+    color: #495057;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid #495057;
+    
+  }
+
+  #ingreseUsuario, #ingresePass, #crearUser, #crearPass, #repitePass
+  {width: 40%;}
+
+  .menuLogeado{
+    position: relative;
+  }
+
+  #title{
+    color: #495057;
+    padding: 2%;
+
+  }
+
+  #dolar{
+    display: grid; 
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px;
+    height: 100%;
+  }
+#dolar li{
+    font-size:small;
+    display: flex;
+    padding: 2px;
+    background-color: #495057;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.item-0 {
+    border-radius: 11px 11px 0px 0px;
+    border: 2px solid #fff;
+    border-bottom: none;
+    grid-row-start: 1;
+    grid-column-start: 4;
+ 
+    grid-row-end: 2;
+    grid-column-end: 5;
+    
+ }
+.item-1 {
+    border-right:2px solid #fff; 
+    border-left: 2px solid #fff;;
+
+    grid-row-start: 2;
+    grid-column-start: 4;
+ 
+    grid-row-end: 3;
+    grid-column-end: 5;
+    
+ }
+ .item-2 {
+    border-right:2px solid #fff; 
+    border-left: 2px solid #fff;;
+
+    grid-row-start: 3;
+    grid-column-start: 4;
+ 
+    grid-row-end: 4;
+    grid-column-end: 5;
+    
+ }
+ .item-3 {
+    border-radius: 0px 0px 11px 11px;
+    border: 2px solid #fff;
+    border-top: none;
+
+    grid-row-start: 4;
+    grid-column-start: 4;
+ 
+    grid-row-end: 5;
+    grid-column-end: 5;
+    
+ }

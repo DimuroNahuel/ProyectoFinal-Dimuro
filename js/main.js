@@ -209,16 +209,15 @@ function ingresoForm(){
             cambioDisplay(menuDesplegable,dispNone)
 
             cambioDisplay(listaMostrarLog,dispBlock);
-            cambioDisplay(menuLogeado,dispFlex)
-            
-            
+            cambioDisplay(menuLogeado,dispFlex)  
         }
-        else if (ingresar==false&& botonIngreso) { //si ingresa datos invalidos dará error.
+        else  { //si ingresa datos invalidos dará error.
             Swal.fire(
                 '¡Hubo un problema!',
-                'INTENTE NUEVAMENTE',
+                'Usuario o contraseña invalidos',
                 'error')
             }
+
         }
     );
 

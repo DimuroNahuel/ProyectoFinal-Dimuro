@@ -45,7 +45,7 @@ listaOcultarLog.unshift("idLogear","idRegistrar");
 
 Swal.fire(
     'Bienvenido a nuestro sistema ATM',
-    'Por favor aguarde, en instantes podrá ingresar',
+    'Por favor aguarde, en instantes visualizará el menu',
   )
 
 cambioDisplay(timeIniciando,dispNone);
@@ -290,7 +290,7 @@ function deposito(){
     else{
         Swal.fire(
             '¡Hubo un problema!',
-            'CAMPO VACIO',
+            'Revise el monto a depositar',
             'error')
     }
 }
@@ -316,7 +316,7 @@ function extraccion(){
             else{
                 Swal.fire(
                     '¡Hubo un problema!',
-                    'MONTO INSUFICIENTE',
+                    'REVISE EL MONTO A EXTRAER',
                     'error')
             }
         }    
@@ -356,7 +356,7 @@ function transferir(){
                     'Se ha realizado su transferencia',
                     'success')    
             }
-            else if(cbu=="" || monto=="")
+            else if(cbu=="" || isNaN(monto))
              {
                 Swal.fire(
                     '¡Hubo un problema!',
@@ -367,7 +367,7 @@ function transferir(){
             else{
                 Swal.fire(
                     '¡Hubo un problema!',
-                    'Usuario no encontrado',
+                    'USUARIO NO ENCONTRADO',
                     'error')
             }
         }

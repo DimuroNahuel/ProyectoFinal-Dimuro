@@ -337,14 +337,13 @@ function extraccion(){
 
 function transferir(){
     let cbu = document.getElementById("cbuTransferencia").value;
+    let monto = parseInt(document.getElementById("montoTransferencia").value,10)
     let buscar = usserLista.findIndex(usserLista=>usserLista.usserSavee==cbu); //valida si el usuario se encuentra o no en el array.
         if (buscar!=-1 && usuarioActivo!=cbu){
-            if(document.getElementById("montoTransferencia").value<=saldoUsserActivo && document.getElementById("montoTransferencia").value>0){
+            if(monto<=saldoUsserActivo && monto>0){
                 //conjunto de if para validar que se pueda realar o no la transferencia.
-                let saldoAux = document.getElementById("montoTransferencia").value;
-                saldoAux=parseInt(saldoAux,10);//se parsea el saldo para tener su valor
-                usserLista[buscar].saldo=usserLista[buscar].saldo+saldoAux;
-                saldoUsserActivo=saldoUsserActivo-saldoAux;
+                usserLista[buscar].saldo=usserLista[buscar].saldo+monto;
+                saldoUsserActivo=saldoUsserActivo-monto;
                 usserLista[indiceUser].saldo=saldoUsserActivo;
                 //operaciones para el cambio de saldos entre los ussers
                 guardarLocal(); //funcion que guarda cambios en el localstorage
@@ -357,6 +356,14 @@ function transferir(){
                     'Se ha realizado su transferencia',
                     'success')    
             }
+            else if(cbu=="" || monto=="")
+             {
+                Swal.fire(
+                    '¡Hubo un problema!',
+                    'CAMPO VACIO',
+                    'error')
+            }
+
             else{
                 Swal.fire(
                     '¡Hubo un problema!',
@@ -366,8 +373,8 @@ function transferir(){
         }
         else{
             Swal.fire(
-                '¡Hubo un problema!',
-                'Imposible auto enviarse dinero',
+                '¡Error con el nombre de usuario receptor!',
+                'Verifique que sea un usuario ya registrado y que sea distinto del emisor ',
                 'error')
     }
 }

@@ -272,12 +272,11 @@ function registroFrom(){
 function guardarLocal(){
     localStorage.setItem("usuarios",JSON.stringify(usserLista));
 }; // funcion para guardar los usuarios registrados en el localstore
-
 function deposito(){
-    if(document.getElementById("inputDeposito").value!="" && document.getElementById("inputDeposito").value>0){
+    let saldoAux = parseInt(document.getElementById("inputDeposito").value,10);
+    if(saldoAux!="" && saldoAux>0){
         //validacion para depositar o no
-        let saldoAux = document.getElementById("inputDeposito");
-        saldoUsserActivo=saldoUsserActivo+parseInt(saldoAux.value,10);
+        saldoUsserActivo=saldoUsserActivo+saldoAux;
         funActSaldo();
         usserLista[indiceUser].saldo=saldoUsserActivo;//guarda saldo en la lista de ussers
         Swal.fire(
@@ -292,16 +291,17 @@ function deposito(){
             '¡Hubo un problema!',
             'Revise el monto a depositar',
             'error')
+            document.getElementById("inputDeposito").value="";
     }
 }
 
 function extraccion(){
-    if(document.getElementById("extraerDinero").value!="" || document.getElementById("confirmaPass").value!=""){
-        if (document.getElementById("confirmaPass").value==passUsserActivo) {
-            if (document.getElementById("extraerDinero").value<=saldoUsserActivo && document.getElementById("extraerDinero").value>0) {     
+    let saldoAux = parseInt(document.getElementById("extraerDinero").value,10);//se toma valor del input
+    let confirmaPass = document.getElementById("confirmaPass").value;
+    if(saldoAux!="" || confirmaPass!=""){
+        if (confirmaPass==passUsserActivo) {
+            if (saldoAux<=saldoUsserActivo && saldoAux>0) {     
                 //conjunto de if para validar que se pueda realar o no la extraccion.
-                let saldoAux = document.getElementById("extraerDinero").value;//se toma valor del input
-                saldoAux=parseInt(saldoAux,10); //se parsea el saldo para tener su valor
                 saldoUsserActivo=saldoUsserActivo-saldoAux;
                 funActSaldo(); //funcion que actualiza el saldo
                 usserLista[indiceUser].saldo=saldoUsserActivo
@@ -472,7 +472,7 @@ function cambioDisplay(lista,display){
         let dataBank = document.getElementById("dolar");
         fechaDolar=data[data.length-1].d;
         precioDolar=data[data.length-1].v;
-
+        
         let fechaText = document.createElement("li");
         fechaText.innerHTML= "COTIZ. DOLAR CON FECHA:"
         fechaText.setAttribute("class","item-0")
@@ -489,3 +489,9 @@ function cambioDisplay(lista,display){
         dataBank.append(fechaText,fecha,precioText,precio);
 });
 
+// fetch ("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
+// .then((response)=>response.json())
+// .then((data)=>{
+//     console.log(data);
+    
+// }) api respaldo por si no funciona la primera
